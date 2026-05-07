@@ -1,9 +1,9 @@
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
+from dotenv import load_dotenv
+load_dotenv()
 
-
-os.environ["GOOGLE_API_KEY"] = "AIzaSyC8M2TgVr3bpoWO1VkVTUDLA2HqevZhF0I"
 
 model = ChatGoogleGenerativeAI(model ="gemini-2.5-flash-lite")
 

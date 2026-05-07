@@ -1,7 +1,10 @@
 from google import genai
 import streamlit as st
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-client = genai.Client(api_key = "AIzaSyC8M2TgVr3bpoWO1VkVTUDLA2HqevZhF0I")
+client = genai.Client()
 
 
 st.title("Gemini AI Chat App")
@@ -13,7 +16,7 @@ if st.button("Generate"):
         with st.spinner("Thinking...."):
             try:
                 response = client.models.generate_content(
-                    model = "gemini-2.5-flash",
+                    model = "gemini-2.5-flash-lite",
                     contents = user_input
                 )
                 st.success("Response: ")
